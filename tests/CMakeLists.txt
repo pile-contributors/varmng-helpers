@@ -16,14 +16,17 @@
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
+# Instruct CMake to run moc automatically when needed.
+set (CMAKE_AUTOMOC ON)
+
 if (NOT INCLUDE_PILE_SOURCES_DIRECTLY)
     set (VARMNG_LIBRARY varmng)
 endif()
 
-add_executable(test_basic
-    ${VARMNG_SOURCES}
-    ${VARMNG_HEADERS}
-    basic.cc)
+#add_executable(test_basic
+#    ${VARMNG_SOURCES}
+#    ${VARMNG_HEADERS}
+#    basic.cc)
 
 if (UNIX)
     find_package(Threads REQUIRED)
@@ -31,10 +34,22 @@ if (UNIX)
     add_definitions(-fPIC)
 endif()
 
-target_link_libraries(test_basic
-    ${GTEST_BOTH_LIBRARIES}
-    ${VARMNG_LIBRARY})
 
-add_test(
-    NAME test_basic
-    COMMAND $<TARGET_FILE:test_basic>)
+#######################################################
+#######################################################
+#######################################################
+#target_link_libraries(test_basic
+#    ${GTEST_BOTH_LIBRARIES}
+#    ${VARMNG_LIBRARY})
+#
+#add_test(
+#    NAME test_basic
+#    COMMAND $<TARGET_FILE:test_basic>)
+#######################################################
+#######################################################
+#######################################################
+
+
+enable_testing()
+add_subdirectory("unit")
+add_subdirectory("integration")
