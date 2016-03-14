@@ -13,11 +13,13 @@
 #
 # ============================================================================
 
+find_package(Qt5 QUIET COMPONENTS Core Widgets)
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 # Instruct CMake to run moc automatically when needed.
 set (CMAKE_AUTOMOC ON)
+set( CMAKE_INCLUDE_CURRENT_DIR ON)
 
 if (NOT INCLUDE_PILE_SOURCES_DIRECTLY)
     set (VARMNG_LIBRARY varmng)
@@ -51,5 +53,7 @@ endif()
 
 
 enable_testing()
+
+add_subdirectory("motest")
 add_subdirectory("unit")
 add_subdirectory("integration")

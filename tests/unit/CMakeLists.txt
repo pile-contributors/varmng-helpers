@@ -4,7 +4,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # Will accumulate the source files
 list(APPEND modules_testing_src
-    "manager-tests")
+    "manager-tests"
+    "models/vardef-tests")
 
 if (modules_testing_src)
     list(REMOVE_DUPLICATES modules_testing_src)

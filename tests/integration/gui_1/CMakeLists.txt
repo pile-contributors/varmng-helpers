@@ -12,10 +12,12 @@ set( VARMNGGUI1_RES
 
 set( VARMNGGUI1_LIBS
     varmng
+    motest
 )
 
 set( VARMNGGUI1_QT_MODS
     Core
+    Gui
     Widgets
     Xml
     Sql
