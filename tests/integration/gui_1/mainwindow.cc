@@ -222,7 +222,7 @@ void MainWindow::on_actionAdd_variable_to_context_2_triggered ()
     if (sm->selectedIndexes ().count() > 0)
         mi = sm->currentIndex ();
     ctx2_model_->insertRow (mi.row () + 1);
-    ui->ctx2TreeView->edit (ctx2_model_->index (mi.row () + 1, 0));
+    ui->ctx2TreeView->edit (ctx2_model_->editItem ());
 }
 
 void MainWindow::on_actionAdd_variable_to_context_3_triggered()
@@ -232,10 +232,8 @@ void MainWindow::on_actionAdd_variable_to_context_3_triggered()
     if (sm->selectedIndexes ().count() > 0)
         mi = sm->currentIndex ();
     ctx3_model_->insertRow (mi.row () + 1);
-    ui->ctx3TreeView->edit (ctx3_model_->index (mi.row () + 1, 0));
+    ui->ctx3TreeView->edit (ctx3_model_->editItem ());
 }
-
-
 
 void MainWindow::on_actionReload_Evaluator_triggered()
 {
