@@ -12,6 +12,7 @@ class VarMng;
 class VarDefModel;
 class VarCtxModel;
 class VarEvalModel;
+class VarEval;
 
 class MainWindow : public QMainWindow
 {
@@ -39,6 +40,8 @@ private slots:
 
     void on_actionCheck_definitions_model_triggered();
 
+    void on_actionReload_Evaluator_triggered();
+
 private:
     Ui::MainWindow *ui;
 
@@ -58,6 +61,7 @@ private:
     ModelTest * spl_test_model_;
     ModelTest * enh_test_model_;
 
+    VarEval * eval_;
 };
 
 #endif // MAINWINDOW_H
